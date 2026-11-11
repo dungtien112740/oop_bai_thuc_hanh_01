@@ -166,10 +166,14 @@ void SystemInterface::runMenu() {
             int ma; char kt;
             cout << "Ma bai: "; cin >> ma;
             cout << "Kich thuoc (S/M/L): "; cin >> kt;
+            if (co1 && co2 && co3){\
+				cout << "Khong the them bai";
+				break;
+			}
             if (!co1)      { bai1 = bai_xe(ma, kt); co1 = true; }
             else if (!co2) { bai2 = bai_xe(ma, kt); co2 = true; }
-            else           { bai3 = bai_xe(ma, kt); co3 = true; }
-            cout << "Da tao bai " << ma << "\n";
+            else if (!co3) { bai3 = bai_xe(ma, kt); co3 = true; }
+			else cout << "Da tao bai " << ma << "\n";
             break;
 		}
         case 2: {
